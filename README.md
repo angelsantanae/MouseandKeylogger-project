@@ -1,4 +1,4 @@
-<h1>Mouse and Keylogger with python</h1>
+<h1>Mouse and Keylogger with python and Pynput</h1>
 
  
 
@@ -23,31 +23,31 @@ In this project I was aiming create a program designed to track and log user inp
 <h2>Project walk-through:</h2>
 
 <p align="center">
-Starting SSH daemon and try to make a connection via SSH <br/>
-<img src="https://i.imgur.com/oSx9OIr.png" height="80%" width="80%" alt="SSH lab Steps"/>
+Creating code to store keystrokes in a text file(in this case log.txt) <br/>
+<img src="https://i.imgur.com/mnOY7wJ.png" height="80%" width="80%" alt="SSH lab Steps"/>
 <br />
 <br />
-Configuration of SSH public key authentication(generating unique public and private key pair) and noticing the private and public key files  
+After instaling pynput, in Main we want to focus on "Listeners" to literally listen to keystrokes and also the use of the 'with' keyword to release memory.
   <br/>
-<img src="https://i.imgur.com/znQLDK9.png" height="80%" width="80%" alt="SSH lab Steps"/>
+<img src="https://i.imgur.com/6tvXF71.png" height="80%" width="80%" alt="SSH lab Steps"/>
 <br />
 <br />
-When creating key pairs on other hosts, I would have to copy the user public key file to the
-server, specifically, the authorized_keys file in the user .ssh folder. Even though I generated the keys on the SSH server (localhost IP of 127.0.0.1), I wanted to go through how this works. I noticed the authorized_keys file that the ssh-copy-id command created and copied the public key file to, it also sets necessary permissions for user access to the file. I went ahead and looked at the copied public key on authorized_keys
+I created a 'control' python file to finally write the command to control mouse-positioning, listen to mouse, controlling keyboard and listening to keyboard.
   <br/>
-<img src="https://i.imgur.com/u3NrdsA.png" height="80%" width="80%" alt="SSH lab Steps"/>
+<img src="https://i.imgur.com/vQekdcT.png" height="80%" width="80%" alt="SSH lab Steps"/>
 <br />
 <br />
-I went ahead in another terminal and did ssh localhost -l kali again to login as user kali but this time I was asked for SSH private key passphrase and not the user password I use at the beginning, then I logged in using SSH public key
+Now in 'main' I was able to import Listener as well as the code here to record the keystrokes on my 'log.txt' file created at the beginning. As you can see here, when running the code, when I wrote anywhere on the system, it recorded it on the file. Those letters in the log.txt file, were my keystrokes on google after i ran the code and before I stopped it.
 <br />
 <br />
-<img src="https://i.imgur.com/v8GO2BY.png" height="80%" width="80%" alt="SSH lab Steps"/> 
+<img src="https://i.imgur.com/Qh4VxUd.png" height="80%" width="80%" alt="SSH lab Steps"/>
+ <img src="https://i.imgur.com/yoqBuOo.png" height="80%" width="80%" alt="SSH lab Steps"/>
 <br />
 <br />
-
+Now here, I wanted to set a listener for the mouse instead of the keystrokes, I was able to again import the Listener with pynput but instead here it was for the mouse positioning as you can see on the code. You can see below at the terminal, the exact positioning of my mouse on the screen.
 <br />
 <br />
-
+<img src="https://i.imgur.com/52JJ4OR.png" height="80%" width="80%" alt="SSH lab Steps"/>
 </p>
 
 <!--
